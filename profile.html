@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fafafa;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-header {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .profile-info {
+        padding: 20px;
+    }
+    .profile-info p {
+        margin: 10px 0;
+    }
+    .profile-info p strong {
+        font-weight: bold;
+    }
+    .edit-profile {
+        text-align: center;
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #3897f0;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="profile-header">
+        <img class="profile-pic" src="./jim-removebg.png" alt="Profile Picture">
+        <h2 id="username">GRAB ON</h2>
+    </div>
+    <div class="profile-info">
+        <p><strong>Name:</strong> <span id="name">Edit ur name</span></p>
+        <p><strong>Batch:</strong> <span id="batch">Edit ur batch</span></p>
+        <p><strong>Bio:</strong> <span id="bio">Music heals when heart feel</span></p>
+    </div>
+    <div class="edit-profile">
+        <button onclick="editProfile()">Edit Profile</button>
+    </div>
+</div>
+
+<script>
+    function editProfile() {
+        var newName = prompt("Enter your name:");
+        var newBatch = prompt("Enter your Batch:");
+        var newBio = prompt("Enter your bio:");
+        
+        if (newName !== null && newName.trim() !== "") {
+            document.getElementById("name").textContent = newName;
+        }
+        if (newBatch !== null && newBatch.trim() !== "") {
+            document.getElementById("batch").textContent = newBatch;
+        }
+        if (newBio !== null && newBio.trim() !== "") {
+            document.getElementById("bio").textContent = newBio;
+        }
+    }
+</script>
+</body>
+</html>

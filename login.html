@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Details</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .HEAD {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #f2d12b;
+        background: linear-gradient(270deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+        background-size: 800% 800%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient 8s ease infinite;
+    }
+    .logo-container {
+        text-align: center;
+    }
+
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #a7a7a6;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="logo-container">
+        <img class="logo" src="./jim-removebg.png" alt="Logo">
+        <h1 class="HEAD">GRAB ON</h1>
+    </div>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+    </div>
+    <div class="form-group">
+        <label for="bioYear">Bio:</label>
+        <input type="text" id="bio" placeholder="Enter your bio year (e.g., 1st, 2nd, 3rd, 4th)">
+    </div>
+    <div class="form-group">
+        <label for="class">Class:</label>
+        <input type="text" id="class-sec-batch" placeholder="Enter your class">
+    </div>
+    <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="text" id="year" placeholder="Enter your year (e.g., 1st, 2nd, 3rd, 4th)">
+    </div>
+    <a href="./profile.html"><button id="exploreBtn" disabled>Explore</button></a>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const usernameInput = document.getElementById('username');
+        const bioYearInput = document.getElementById('bio');
+        const exploreBtn = document.getElementById('exploreBtn');
+
+        usernameInput.addEventListener('input', toggleExploreButton);
+        bioYearInput.addEventListener('input', toggleExploreButton);
+
+        function toggleExploreButton() {
+            if (usernameInput.value.trim() !== '' && bioYearInput.value.trim() !== '') {
+                exploreBtn.disabled = false;
+            } else {
+                exploreBtn.disabled = true;
+            }
+        }
+    });
+</script>
+</body>
+</html>
